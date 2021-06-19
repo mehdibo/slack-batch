@@ -77,8 +77,8 @@ with open(file, "r") as emailsFile:
         driver.execute_script("document.querySelector('.c-popover').style.display = 'none'")
         sendBtn.click()
 
-        logging.debug("Clicked on send, waiting 30 seconds")
-        driver.implicitly_wait(30)
+        logging.debug("Clicked on send, waiting 50 seconds")
+        driver.implicitly_wait(60)
 
         if args.screenshot:
             logging.debug("Saving a screenshot of the page")
