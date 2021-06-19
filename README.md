@@ -27,3 +27,25 @@ docker run --rm \
 Replace `/tmp` with the path where your `emails.txt` file exists
 
 If you want to use the `--screenshot` flag
+
+## Directly on machine
+
+```
+usage: ./main.py [-h] --workspace WORKSPACE --email EMAIL --passwd PASSWD
+                   [--verbose] [--screenshot]
+                   emails
+
+Send slack invitations
+
+positional arguments:
+  emails                A file that contains one email per line
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --workspace WORKSPACE
+                        A url to your Slack workspace
+  --email EMAIL         Your Slack workspace email
+  --passwd PASSWD       Your Slack workspace password
+  --verbose             Verbose mode
+  --screenshot          Screenshot after every invite
+```
