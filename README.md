@@ -4,9 +4,7 @@ If you still have a legacy token check [my other repo instead](https://github.co
 
 # Installation
 ## Docker (Recommended)
-1. Make sure you have docker installed and running
-2. `git clone` the repository and `cd` into it
-3. Run `docker build -t slack-back .`
+1. Just run `docker pull mehdibo/slack-batch`
 
 ## Directly on machine
 1. Make sure you have Python 3.9 installed
@@ -21,7 +19,7 @@ Run:
 ```sh
 docker run --rm \
     -v /tmp:/tmp/files \
-    slack-batch emails.txt --workspace https://test.slack.com --email YOUR_EMAIL --passwd YOUR_PASSWORD
+    mehdibo/slack-batch emails.txt --workspace https://test.slack.com --email YOUR_EMAIL --passwd YOUR_PASSWORD
 ```
 
 Replace `/tmp` with the path where your `emails.txt` file exists
