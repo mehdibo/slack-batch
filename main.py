@@ -12,6 +12,7 @@ parser.add_argument("--workspace", type=str, help="A url to your Slack workspace
 parser.add_argument("--email", type=str, help="Your Slack workspace email", required=True)
 parser.add_argument("--passwd", type=str, help="Your Slack workspace password", required=True)
 parser.add_argument("--verbose", default=False, action='store_true', help="Verbose mode")
+parser.add_argument("--screenshot", default=False, action='store_true', help="Screenshot after every invite")
 args = parser.parse_args()
 
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
@@ -81,8 +82,9 @@ with open(file, "r") as emailsFile:
         logging.debug("Clicked on send, waiting 30 seconds")
         driver.implicitly_wait(30)
 
-        logging.debug("Saving a screenshot of the page")
-        driver.save_screenshot("./aft"+cleanEmail+".png")
+        if args.screenshot:
+            logging.debug("Saving a screenshot of the page")
+            driver.save_screenshot("./aft"+cleanEmail+".png")
 
         if "This person is already in your workspace." in driver.page_source:
             logging.warning("%s is already invited to your workspace", cleanEmail)
