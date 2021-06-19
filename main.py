@@ -82,7 +82,8 @@ with open(file, "r") as emailsFile:
 
         if args.screenshot:
             logging.debug("Saving a screenshot of the page")
-            driver.save_screenshot("./aft"+cleanEmail+".png")
+            if not driver.save_screenshot("./screenshots/aft-"+cleanEmail+".png"):
+                logging.warning("Couldn't save screenshot")
 
         if "This person is already in your workspace." in driver.page_source:
             logging.warning("%s is already invited to your workspace", cleanEmail)
