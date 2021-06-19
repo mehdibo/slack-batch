@@ -18,12 +18,12 @@ If you still have a legacy token check [my other repo instead](https://github.co
 ## Via Docker (Recommended)
 
 Run:
-```shell script
+```sh
 docker run --rm \
     -v /tmp:/tmp/files \
     slack-batch emails.txt --workspace https://test.slack.com --email YOUR_EMAIL --passwd YOUR_PASSWORD
 ```
 
-Change `/tmp` with the path where your `emails.txt` file exists
+Replace `/tmp` with the path where your `emails.txt` file exists
 
 If you want to use the `--screenshot` flag
