@@ -12,6 +12,6 @@ RUN apk update && apk upgrade \
     && tar -zxf /tmp/geckodriver.tar.gz -C /usr/bin \
     && apk add firefox-esr \
     && pip install -r requirements.txt \
-    && mkdit ./screenshots
+    && mkdir ./screenshots
 
 ENTRYPOINT ["/opt/app/main.py"]
