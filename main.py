@@ -15,9 +15,7 @@ parser.add_argument("--verbose", default=False, action='store_true', help="Verbo
 parser.add_argument("--screenshot", default=False, action='store_true', help="Screenshot after every invite")
 args = parser.parse_args()
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
-if args.verbose:
-    logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG if args.verbose else logging.INFO)
 
 url = args.workspace + "/?redir=%2Fadmin%2Finvites"
 file = args.emails
